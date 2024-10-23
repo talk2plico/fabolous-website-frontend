@@ -36,6 +36,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Call fetchProducts to load products when the page loads
 document.addEventListener('DOMContentLoaded', fetchProducts);
+};
+    // Track affiliate clicks
+const trackClick = async (productId, userId) => {
+    try {
+        const response = await fetch('http://localhost:5000/api/clicks', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                productId,
+                userId // Optional: only if the user is logged in
+            })
+        });
 
+        if (response.ok) {
+            console.log('Click tracked successfully.');
+        } else {
+            console.error('Error tracking click.');
+        }
+    } catch (error) {
+        console.error('Error tracking click:', error);
+    }
+};
+
+// Modify the Buy Now button to track clicks
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('neumorphism-btn')) {
+        const productId = e.target.getAttribute('data-product-id');
+        const userId = e.target.getAttribute('data-user-id'); // If user is logged in
+        trackClick(productId, userId);
+    }
     });
 });
