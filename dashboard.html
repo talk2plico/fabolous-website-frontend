@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard for Fabolous Website">
+    <title>Admin Dashboard | Fabolous Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-styles.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Sidebar (Glassmorphism) -->
+    <aside class="glassmorphism-sidebar w-64 fixed h-screen top-0 left-0 p-6">
+        <div class="text-white font-bold text-2xl mb-6">Admin Panel</div>
+        <nav class="space-y-4">
+            <a href="#dashboard" class="text-white hover:underline">Dashboard</a>
+            <a href="#products" class="text-white hover:underline">Manage Products</a>
+            <a href="#users" class="text-white hover:underline">Manage Users</a>
+            <a href="#analytics" class="text-white hover:underline">Analytics</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="ml-64 p-8">
+        <!-- Dashboard Overview -->
+        <section id="dashboard" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Dashboard Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Total Products -->
+                <div class="claymorphism-card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Total Products</h3>
+                    <p class="text-4xl font-bold">120</p>
+                </div>
+                <!-- Card 2: Total Users -->
+                <div class="claymorphism-card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Total Users</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard for Fabolous Website">
+    <title>Admin Dashboard | Fabolous Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-styles.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Sidebar (Glassmorphism) -->
+    <aside class="glassmorphism-sidebar w-64 fixed h-screen top-0 left-0 p-6">
+        <div class="text-white font-bold text-2xl mb-6">Admin Panel</div>
+        <nav class="space-y-4">
+            <a href="#dashboard" class="text-white hover:underline">Dashboard</a>
+            <a href="#products" class="text-white hover:underline">Manage Products</a>
+            <a href="#users" class="text-white hover:underline">Manage Users</a>
+            <a href="#analytics" class="text-white hover:underline">Analytics</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="ml-64 p-8">
+        <!-- Dashboard Overview -->
+        <section id="dashboard" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Dashboard Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Total Products -->
+                <div class="claymorphism-card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Total Products</h3>
+                    <p class="text-4xl font-bold">120</p>
+                </div>
+                <!-- Card 2: Total Users -->
+                <div class="claymorphism-card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Total Users</h3>
+                    <p class="text-4xl font-bold">85</p>
+                </div>
+                <!-- Card 3: Affiliate Clicks -->
+                <div class="claymorphism-card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Affiliate Clicks</h3>
+                    <p class="text-4xl font-bold">1,230</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Products -->
+        <section id="products" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Manage Products</h2>
+            <table class="w-full text-left table-auto">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="py-2 px-4">Product Name</th>
+                        <th class="py-2 px-4">Category</th>
+                        <th class="py-2 px-4">Price</th>
+                        <th class="py-2 px-4">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4">Wireless Headphones</td>
+                        <td class="py-2 px-4">Electronics</td>
+                        <td class="py-2 px-4">$99</td>
+                        <td class="py-2 px-4">
+                            <button class="neumorphism-btn px-4 py-1">Edit</button>
+                            <button class="neumorphism-btn px-4 py-1">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more products dynamically here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Manage Users -->
+        <section id="users" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Manage Users</h2>
+            <table class="w-full text-left table-auto">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="py-2 px-4">Username</th>
+                        <th class="py-2 px-4">Email</th>
+                        <th class="py-2 px-4">Role</th>
+                        <th class="py-2 px-4">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4">john_doe</td>
+                        <td class="py-2 px-4">john@example.com</td>
+                        <td class="py-2 px-4">Admin</td>
+                        <td class="py-2 px-4">
+                            <button class="neumorphism-btn px-4 py-1">Edit</button>
+                            <button class="neumorphism-btn px-4 py-1">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more users dynamically here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Analytics</h2>
+            <div class="flex justify-center">
+                <div class="claymorphism-card p-8">
+                    <p>Chart or graph representing click-through rates and conversions will be displayed here.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/admin-script.js"></script>
+</body>
+</html>
+￼Enter                    <p class="text-4xl font-bold">85</p>
+                </div>
+                <!-- Card 3: Affiliate Clicks -->
+                <div class="claymorphism-card p-6 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Affiliate Clicks</h3>
+                    <p class="text-4xl font-bold">1,230</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Products -->
+        <section id="products" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Manage Products</h2>
+            <table class="w-full text-left table-auto">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="py-2 px-4">Product Name</th>
+                        <th class="py-2 px-4">Category</th>
+                        <th class="py-2 px-4">Price</th>
+                        <th class="py-2 px-4">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4">Wireless Headphones</td>
+                        <td class="py-2 px-4">Electronics</td>
+                  <td class="py-2 px-4">$99</td>
+                        <td class="py-2 px-4">
+                            <button class="neumorphism-btn px-4 py-1">Edit</button>
+                            <button class="neumorphism-btn px-4 py-1">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more products dynamically here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Manage Users -->
+        <section id="users" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Manage Users</h2>
+            <table class="w-full text-left table-auto">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="py-2 px-4">Username</th>
+                        <th class="py-2 px-4">Email</th>
+                        <th class="py-2 px-4">Role</th>
+                        <th class="py-2 px-4">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4">john_doe</td>
