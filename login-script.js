@@ -23,4 +23,35 @@ toggleLink.addEventListener('click', function(e) {
         toggleMessage.textContent = "Already have an account?";
         toggleLink.textContent = "Login here";
     }
+    // Register a new user
+    document.getElementById('registration-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('register-username').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+
+    const userData = {
+        username,
+        email,
+        password
+    };
+
+    try {
+        const response = await fetch('http://localhost:5000/api/users/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            alert('User registered successfully!');
+        } else {
+            alert('Error registering user.');
+        }
+    } catch (error) {
+        console.error('Error registering user:', error);
+    }
 });
