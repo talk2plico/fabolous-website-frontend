@@ -1,0 +1,42 @@
+/* Neumorphism Card */
+.neumorphism-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: -10px -10px 30px rgba(255, 255, 255, 0.7),
+                10px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.neumorphism-card:hover {
+    box-shadow: inset -10px -10px 30px rgba(255, 255, 255, 0.7),
+                inset 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Neumorphism Input */
+.neumorphism-input {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+.neumorphism-input:focus {
+    box-shadow: inset 10px 10px 20px rgba(0, 0, 0, 0.2), inset -10px -10px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Neumorphism Button */
+.neumorphism-btn {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.neumorphism-btn:hover {
+    box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.2), inset -8px -8px 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Toggle link styling */
+#toggle-link {
+    cursor: pointer;
+}
