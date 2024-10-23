@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Fabolous Website - Affiliate Products">
+    <title>Fabolous Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gradient-to-r from-purple-300 to-blue-500 text-gray-900">
+
+    <!-- Header Section -->
+    <header class="glassmorphism fixed w-full top-0 left-0 shadow-md py-4 px-8 flex justify-between items-center">
+        <div class="text-white font-bold text-2xl">Fabolous Website</div>
+        <nav class="space-x-4">
+            <a href="#" class="text-white hover:underline">Home</a>
+            <a href="#" class="text-white hover:underline">Products</a>
+            <a href="#" class="text-white hover:underline">Blog</a>
+            <a href="#" class="text-white hover:underline">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero parallax bg-gradient-to-r from-blue-500 to-purple-600 h-screen flex items-center justify-center text-center text-white">
+        <div class="space-y-4">
+            <h1 class="text-5xl font-extrabold">Welcome to Fabolous Website</h1>
+            <p class="text-xl">The best products curated just for you!</p>
+            <a href="#products" class="neumorphism-btn px-6 py-3 text-xl">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Product Categories in Claymorphism -->
+    <section id="products" class="py-16 px-8 bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold">Explore Our Categories</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Category 1 -->
+            <div class="claymorphism-card text-center p-8">
+                <img src="img/category1.png" alt="Category 1" class="w-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Electronics</h3>
+                <a href="#" class="block mt-4 text-blue-500 hover:underline">Browse Products</a>
+            </div>
+            <!-- Category 2 -->
+            <div class="claymorphism-card text-center p-8">
+                <img src="img/category2.png" alt="Category 2" class="w-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Fashion</h3>
+                <a href="#" class="block mt-4 text-blue-500 hover:underline">Browse Products</a>
+            </div>
+            <!-- Category 3 -->
+            <div class="claymorphism-card text-center p-8">
+                <img src="img/category3.png" alt="Category 3" class="w-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Home & Kitchen</h3>
+                <a href="#" class="block mt-4 text-blue-500 hover:underline">Browse Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white text-center">
+        <p>&copy; 2024 Fabolous Website - All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
