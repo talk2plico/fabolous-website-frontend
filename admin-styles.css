@@ -1,0 +1,58 @@
+/* General Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Glassmorphism Sidebar */
+.glassmorphism-sidebar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border-radius: 16px;
+}
+
+/* Claymorphism Card */
+.claymorphism-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: -6px -6px 16px rgba(255, 255, 255, 0.5),
+                6px 6px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.claymorphism-card:hover {
+    box-shadow: inset -6px -6px 16px rgba(255, 255, 255, 0.5),
+                inset 6px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Neumorphism Button */
+.neumorphism-btn {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.neumorphism-btn:hover {
+    box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.2), inset -8px -8px 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
