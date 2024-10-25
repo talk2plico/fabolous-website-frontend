@@ -5,9 +5,8 @@ const formTitle = document.getElementById('form-title');
 const toggleMessage = document.getElementById('toggle-message');
 const toggleLink = document.getElementById('toggle-link');
 
-toggleLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    
+// Function to toggle forms
+const toggleForms = () => {
     if (loginForm.classList.contains('hidden')) {
         // Switch to login form
         loginForm.classList.remove('hidden');
@@ -23,8 +22,16 @@ toggleLink.addEventListener('click', function(e) {
         toggleMessage.textContent = "Already have an account?";
         toggleLink.textContent = "Login here";
     }
-    // Register a new user
-    document.getElementById('registration-form').addEventListener('submit', async function (e) {
+};
+
+// Event listener for toggling forms
+toggleLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleForms();
+});
+
+// Register a new user
+const registerUser  = async (e) => {
     e.preventDefault();
 
     const username = document.getElementById('register-username').value;
@@ -47,11 +54,16 @@ toggleLink.addEventListener('click', function(e) {
         });
 
         if (response.ok) {
-            alert('User registered successfully!');
+            alert('User  registered successfully!');
+            // Optionally, you can switch to the login form after successful registration
+            toggleForms();
         } else {
             alert('Error registering user.');
         }
     } catch (error) {
         console.error('Error registering user:', error);
     }
-});
+};
+
+// Attach the registration form submit event listener
+registrationForm.addEventListener('submit', registerUser );
