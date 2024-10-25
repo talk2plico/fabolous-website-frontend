@@ -11,12 +11,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
-        // Fetch and display products
-       const fetchProducts = async () => {
-       try {
+    });
+});
+
+// Fetch and display products
+const fetchProducts = async () => {
+    try {
         const response = await fetch('http://localhost:5000/api/products');
         const products = await response.json();
         const productGrid = document.getElementById('product-grid');
+
+        // Clear existing products
+        productGrid.innerHTML = '';
 
         products.forEach(product => {
             const productCard = `
@@ -24,7 +30,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     <h3 class="text-xl font-semibold">${product.name}</h3>
                     <p class="mt-2">${product.description}</p>
                     <p class="mt-2 text-blue-600 font-bold">$${product.price}</p>
-                    <a href="${product.affiliateLink}" target="_blank" class="neumorphism-btn px-4 py-2 mt-4 inline-block">Buy Now</a>
+                    <a href="${product.affiliateLink}" target="_blank" class="neumorphism-btn px-4 py-2 mt-4 inline-block" data-product-id="${product._id}">Buy Now</a>
                 </div>
             `;
             productGrid.innerHTML += productCard;
@@ -36,8 +42,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Call fetchProducts to load products when the page loads
 document.addEventListener('DOMContentLoaded', fetchProducts);
-};
-    // Track affiliate clicks
+
+// Track affiliate clicks
 const trackClick = async (productId, userId) => {
     try {
         const response = await fetch('http://localhost:5000/api/clicks', {
@@ -68,5 +74,4 @@ document.addEventListener('click', function (e) {
         const userId = e.target.getAttribute('data-user-id'); // If user is logged in
         trackClick(productId, userId);
     }
-    });
 });
