@@ -53,7 +53,7 @@ const displayProducts = (filteredProducts) => {
 
 // Function to filter products by search input, category, and price
 const filterProducts = () => {
-    const searchInput = document.getElementById('product-search')?.value.toLowerCase() || '';
+    const searchInput = document.getElementById('product-search').value.toLowerCase();
     const categoryFilter = document.getElementById('category-filter').value;
     const priceFilter = document.getElementById('price-filter').value;
 
@@ -116,7 +116,7 @@ document.addEventListener('click', async function (e) {
 
 // Newsletter subscription
 const newsletterForm = document.getElementById('newsletter-form');
-newsletterForm.addEventListener(' submit', async function (e) {
+newsletterForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const email = document.getElementById('subscriber-email').value;
