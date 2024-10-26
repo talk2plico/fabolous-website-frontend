@@ -52,32 +52,21 @@ const displayProducts = (filteredProducts) => {
 };
 
 // Function to filter products by search input, category, and price
-const filterProducts = () => {
-    const searchInput = document.getElementById('product-search').value.toLowerCase();
+const filterProducts = async () => {
+    const searchInput = document.getElementById('product-search')?.value.toLowerCase() || '';
     const categoryFilter = document.getElementById('category-filter').value;
     const priceFilter = document.getElementById('price-filter').value;
 
-    const filteredProducts = products.filter(product => {
-        const matchesSearch = product.name.toLowerCase().includes(searchInput) ||
-                              product.description.toLowerCase().includes(searchInput) ||
-                              product.category.toLowerCase().includes(searchInput);
-
-        const matchesCategory = (categoryFilter === 'all') || product.category.toLowerCase() === categoryFilter;
-
-        const price = parseFloat(product.price);
-        let matchesPrice = true;
-        if (priceFilter !== 'all') {
-            const [minPrice, maxPrice] = priceFilter.split('-').map(Number);
-            matchesPrice = price >= minPrice && price <= maxPrice;
-        }
-
-        return matchesSearch && matchesCategory && matchesPrice;
-    });
-
-    displayProducts(filteredProducts); // Display filtered products
+    try {
+        const response = await fetch(`http://localhost:5000/api/products?search=${searchInput}&category=${categoryFilter}&price=${priceFilter}`);
+        const filteredProducts = await response.json();
+        displayProducts(filteredProducts); // Display filtered products
+    } catch (error) {
+        console.error('Error fetching filtered products:', error);
+    }
 };
 
-// Event listener for filtering products
+// Event listeners for filtering products
 document.getElementById('product-search').addEventListener('input', filterProducts);
 document.getElementById('category-filter').addEventListener('change', filterProducts);
 document.getElementById('price-filter').addEventListener('change', filterProducts);
@@ -131,7 +120,7 @@ newsletterForm.addEventListener('submit', async function (e) {
         });
 
         if (response.ok) {
-            document.getElementById('subscription-success').classList.remove('hidden');
+            document.getElementById('subscription-success').classList .remove('hidden');
             document.getElementById('subscription-error').classList.add('hidden');
             newsletterForm.reset();
         } else {
