@@ -58,6 +58,35 @@
         </div>
     </section>
 
+    <!-- Filter Section -->
+    <section id="filters" class="py-4 px-8 bg-white">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+            <!-- Categories Filter -->
+            <div>
+                <label for="category-filter" class="block text-lg font-semibold mb-2">Filter by Category</label>
+                <select id="category-filter" class="neumorphism-input px-4 py-2" onchange="filterProducts()">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home & Kitchen</option>
+                    <!-- Add more categories here -->
+                </select>
+            </div>
+
+            <!-- Price Filter -->
+            <div>
+                <label for="price-filter " class="block text-lg font-semibold mb-2">Filter by Price</label>
+                <select id="price-filter" class="neumorphism-input px-4 py-2" onchange="filterProducts()">
+                    <option value="all">All Prices</option>
+                    <option value="0-50">$0 - $50</option>
+                    <option value="50-100">$50 - $100</option>
+                    <option value="100-500">$100 - $500</option>
+                    <option value="500-1000">$500 - $1000</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
     <!-- Products Section -->
     <section id="products" class="py-16 px-8 bg-white">
         <div class="text-center mb-12">
@@ -68,6 +97,28 @@
         </div>
     </section>
 
+    <!-- Newsletter Subscription Section -->
+    <section id="newsletter" class="py-16 px-8 bg-gray-900 text-white">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold">Subscribe to our Newsletter</h2>
+            <p class="text-lg">Stay updated with the latest products and offers!</p>
+        </div>
+        <div class="flex justify-center">
+            <form id="newsletter-form" class="space-y-4 w-full max-w-md">
+                <input 
+                    type="email" 
+                    id="subscriber-email" 
+                    class="neumorphism-input w-full px-4 py-3" 
+                    placeholder="Enter your email address" 
+                    required
+                >
+                <button type="submit" class="neumorphism-btn w-full py-3 mt-4">Subscribe</button>
+                <p id="subscription-success" class="text-center mt-4 text-green-500 hidden">Thank you for subscribing!</p>
+                <p id="subscription-error" class="text-center mt-4 text-red-500 hidden">Email is already subscribed or an error occurred.</p>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="py-8 bg-gray-900 text-white text-center">
         <p>&copy; 2024 Fabolous Website - All Rights Reserved.</p>
@@ -75,4 +126,4 @@
 
     <script src="js/script.js"></script>
 </body>
-</html>
+    </html>
