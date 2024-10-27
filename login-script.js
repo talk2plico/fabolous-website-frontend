@@ -4,28 +4,25 @@ const registrationForm = document.getElementById('registration-form');
 const formTitle = document.getElementById('form-title');
 const toggleMessage = document.getElementById('toggle-message');
 const toggleLink = document.getElementById('toggle-link');
+const loginError = document.getElementById('login-error');
+const registrationError = document.getElementById('registration-error');
 
 // Function to toggle forms
 const toggleForms = () => {
-    if (loginForm.classList.contains('hidden')) {
-        // Switch to login form
-        loginForm.classList.remove('hidden');
-        registrationForm.classList.add('hidden');
-        formTitle.textContent = "Login";
-        toggleMessage.textContent = "Don't have an account?";
-        toggleLink.textContent = "Register here";
-    } else {
-        // Switch to registration form
-        loginForm.classList.add('hidden');
-        registrationForm.classList.remove('hidden');
-        formTitle.textContent = "Register";
-        toggleMessage.textContent = "Already have an account?";
-        toggleLink.textContent = "Login here";
-    }
+    const isLoginVisible = !loginForm.classList.contains('hidden');
+    
+    // Switch forms
+    loginForm.classList.toggle('hidden', !isLoginVisible);
+    registrationForm.classList.toggle('hidden', isLoginVisible);
+    
+    // Update titles and messages
+    formTitle.textContent = isLoginVisible ? "Register" : "Login";
+    toggleMessage.textContent = isLoginVisible ? "Already have an account?" : "Don't have an account?";
+    toggleLink.textContent = isLoginVisible ? "Login here" : "Register here";
 };
 
 // Event listener for toggling forms
-toggleLink.addEventListener('click', function(e) {
+toggleLink.addEventListener('click', (e) => {
     e.preventDefault();
     toggleForms();
 });
@@ -38,32 +35,60 @@ const registerUser  = async (e) => {
     const email = document.getElementById('register-email').value;
     const password = document.getElementById('register-password').value;
 
-    const userData = {
-        username,
-        email,
-        password
-    };
+    const userData = { username, email, password };
 
     try {
         const response = await fetch('http://localhost:5000/api/users/register', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
         });
 
         if (response.ok) {
             alert('User  registered successfully!');
-            // Optionally, you can switch to the login form after successful registration
-            toggleForms();
+            registrationForm.reset(); // Clear input fields
+            toggleForms(); // Switch to login form
         } else {
-            alert('Error registering user.');
+            const errorData = await response.json();
+            registrationError.textContent = errorData.message || 'Error registering user.';
+            registrationError.classList.remove('hidden');
         }
     } catch (error) {
         console.error('Error registering user:', error);
+        registrationError.textContent = 'An unexpected error occurred. Please try again.';
+        registrationError.classList.remove('hidden');
     }
 };
 
 // Attach the registration form submit event listener
 registrationForm.addEventListener('submit', registerUser );
+
+// Handle login
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    try {
+        const response = await fetch('http://localhost:5000/api/users/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('token', data.token); // Store the JWT token
+            alert('Login successful!');
+            window.location.href = '/admin/dashboard.html'; // Redirect to admin dashboard
+        } else {
+            loginError.textContent = 'Invalid email or password.';
+            loginError.classList.remove('hidden');
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        loginError.textContent = 'An unexpected error occurred. Please try again.';
+        loginError.classList.remove('hidden');
+    }
+});
