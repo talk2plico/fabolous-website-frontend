@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE ht<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,32 +16,34 @@
         <h2 id="form-title" class="text-3xl font-bold text-center mb-6">Login</h2>
 
         <!-- Login Form -->
-        <form id="login-form" class="space-y-4">
+        <form id="login-form" class="space-y-4" autocomplete="off" aria-labelledby="form-title">
             <div>
-                <label for="email" class="block text-lg font-semibold">Email</label>
-                <input type="email" id="login-email" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Email" required>
+                <label for="login-email" class="block text-lg font-semibold">Email</label>
+                <input type="email" id="login-email" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Email" required autocomplete="email">
             </div>
             <div>
-                <label for="password" class="block text-lg font-semibold">Password</label>
-                <input type="password" id="login-password" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Password" required>
+                <label for="login-password" class="block text-lg font-semibold">Password</label>
+                <input type="password" id="login-password" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Password" required autocomplete="current-password">
             </div>
+            <p id="login-error" class="text-center mt-4 text-red-500 hidden">Invalid email or password</p>
             <button type="submit" class="neumorphism-btn w-full py-3 mt-6">Login</button>
         </form>
 
         <!-- Registration Form (Hidden Initially) -->
-        <form id="registration-form" class="space-y-4 hidden">
+        <form id="registration-form" class="space-y-4 hidden" autocomplete="off" aria-labelledby="form-title">
             <div>
-                <label for="username" class="block text-lg font-semibold">Username</label>
-                <input type="text" id="register-username" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Username" required>
+                <label for="register-username" class="block text-lg font-semibold">Username</label>
+                <input type="text" id="register-username" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Username" required autocomplete="username">
             </div>
             <div>
-                <label for="email" class="block text-lg font-semibold">Email</label>
-                <input type="email" id="register-email" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Email" required>
+                <label for="register-email" class="block text-lg font-semibold">Email</label>
+                <input type="email" id="register-email" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Email" required autocomplete="email">
             </div>
             <div>
-                <label for="password" class="block text-lg font-semibold">Password</label>
-                <input type="password" id="register-password" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Password" required>
+                <label for="register-password" class="block text-lg font-semibold">Password</label>
+                <input type="password" id="register-password" class="neumorphism-input w-full px-4 py-2 mt-2" placeholder="Password" required autocomplete="new-password">
             </div>
+            <p id="registration-error" class="text-center mt-4 text-red-500 hidden">Registration failed. Please try again.</p>
             <button type="submit" class="neumorphism-btn w-full py-3 mt-6">Register</button>
         </form>
 
