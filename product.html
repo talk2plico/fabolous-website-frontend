@@ -1,9 +1,36 @@
-<!-- Product Reviews Section -->
+<!--<!-- Product Reviews Section -->
 <section id="reviews" class="py-8 px-8 bg-white">
     <div class="text-center mb-6">
         <h3 class="text-3xl font-semibold">Product Reviews</h3>
     </div>
     <div id="reviews-list" class="space-y-4">
+        <p id="loading-message" class="text-center">Loading reviews...</p>
         <!-- Reviews will be dynamically inserted here -->
     </div>
+</section>
+
+<!-- Submit a Review Form (only for logged-in users) -->
+<section id="submit-review" class="py-8 px-8 bg-white">
+    <div class="text-center mb-6">
+        <h3 class="text-3xl font-semibold">Submit a Review</h3>
+    </div>
+    <form id="review-form" class="space-y-4">
+        <div>
+            <label for="rating" class="block text-lg font-semibold">Rating</label>
+            <select id="rating" class="neumorphism-input w-full px-4 py-2" required>
+                <option value="1">1 - ★☆☆☆☆</option>
+                <option value="2">2 - ★★☆☆☆</option>
+                <option value="3">3 - ★★★☆☆</option>
+                <option value="4">4 - ★★★★☆</option>
+                <option value="5">5 - ★★★★★</option>
+            </select>
+        </div>
+        <div>
+            <label for="comment" class="block text-lg font-semibold">Comment</label>
+            <textarea id="comment" class="neumorphism-input w-full px-4 py-2" placeholder="Write your review..." required></textarea>
+        </div>
+        <button type="submit" class="neumorphism-btn w-full py-3">Submit Review</button>
+        <p id="review-success" class="text-center mt-4 text-green-500 hidden">Review submitted successfully!</p>
+        <p id="review-error" class="text-center mt-4 text-red-500 hidden">Error submitting review. Please try again.</p>
+    </form>
 </section>
