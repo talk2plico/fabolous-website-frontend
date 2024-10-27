@@ -1,3 +1,16 @@
+// Logout function (to be added in the Admin Dashboard)
+const logout = () => {
+    localStorage.removeItem('token'); // Remove token from localStorage
+    alert('You have been logged out.'); // Optional: Notify the user
+    window.location.href = '/login.html'; // Redirect to login page
+};
+
+// Assuming you have a button with the ID 'logout-button' in your Admin Dashboard HTML
+const logoutButton = document.getElementById('logout-button');
+if (logoutButton) {
+    logoutButton.addEventListener('click', logout);
+}
+
 // Toggle between login and registration forms
 const loginForm = document.getElementById('login-form');
 const registrationForm = document.getElementById('registration-form');
@@ -28,7 +41,7 @@ toggleLink.addEventListener('click', (e) => {
 });
 
 // Register a new user
-const registerUser  = async (e) => {
+const registerUser   = async (e) => {
     e.preventDefault();
 
     const username = document.getElementById('register-username').value;
@@ -61,7 +74,7 @@ const registerUser  = async (e) => {
 };
 
 // Attach the registration form submit event listener
-registrationForm.addEventListener('submit', registerUser );
+registrationForm.addEventListener('submit', registerUser  );
 
 // Handle login
 loginForm.addEventListener('submit', async (e) => {
